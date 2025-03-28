@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.products.list">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Catalog::product/list.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="product_list_item"
+                        template="Trustedshops_HyvaEasyIntegration::product/list/item.phtml"
+        >
+            <block name="trustedshops_easyIntegration.product_list_hyva" class="Trustedshops\EasyIntegration\Block\Widget" template="ts_assembler.phtml" >
+                <action method="setLocation">
+                    <argument name="location" xsi:type="string">wdg-loc-pl</argument>
+                </action>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
