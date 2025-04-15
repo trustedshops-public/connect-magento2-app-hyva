@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Trustedshops_HyvaEasyIntegration::css/trustedshops-extra.css"/>
+    </head>
+    <body>
+        <referenceBlock name="description"
+                template="Trustedshops_HyvaEasyIntegration::product/view/sections/description.phtml"
+                group="detailed_info">
+            <arguments>
+                <argument name="title_template" xsi:type="string">Magento_Catalog::product/view/sections/description-section-title.phtml</argument>
+                <argument name="sort_order" xsi:type="number">-20</argument>
+            </arguments>
+
+            <container name="trustedshops.widget.pdp.description" htmlTag="div" htmlClass="trustedshops-description-widget mt-6">
+                <container name="product.info.description" htmlTag="div" />
+            </container>
+        </referenceBlock>
+    </body>
+</page>

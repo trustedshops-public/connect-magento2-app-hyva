@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Hyva\CompatModuleFallback\Model\CompatModuleRegistry">
+        <arguments>
+            <argument name="compatModules" xsi:type="array">
+                <item name="trustedshops-hyva-easy-integration" xsi:type="array">
+                    <item name="original_module" xsi:type="string">Trustedshops_EasyIntegration</item>
+                    <item name="compat_module" xsi:type="string">Trustedshops_HyvaEasyIntegration</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
