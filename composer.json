@@ -3,7 +3,9 @@
   "description": "Hyvä Themes Compatibility module for Trustedshops",
   "type": "magento2-module",
   "version": "1.0.0",
-  "license": "https://policies.etrusted.com/IE/en/plugin-licence.html",
+  "license": [
+    "MIT"
+  ],
   "require": {
     "magento/framework": "*",
     "hyva-themes/magento2-compat-module-fallback": "*",
