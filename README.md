@@ -1,7 +1,6 @@
 # Trusted Shops Magento 2 Hyvä App Connector
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](COPYING)
-[![Release](https://img.shields.io/github/v/release/trustedshops-public/connect-magento2-app-hyva-off)](https://github.com/trustedshops-public/connect-magento2-app-hyva-off/releases)
 
 This module integrates Trusted Shops functionality into Magento 2 storefronts using the Hyvä theme. It adds custom layout XML and CSS to enhance category and product pages with Trusted Shops content.
 
