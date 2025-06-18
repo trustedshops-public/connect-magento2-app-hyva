@@ -15,7 +15,7 @@ This module integrates Trusted Shops functionality into Magento 2 storefronts us
 Use Composer to install the module in your Magento 2 project:
 
 ```bash
-composer require trustedshops/connect-magento2-app-hyva
+composer require trustedshops-public/connect-magento2-app-hyva
 ```
 
 Then enable the module and run setup upgrades:
