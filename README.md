@@ -21,7 +21,7 @@ composer require trustedshops/hyva-easy_integration
 Then enable the module and run setup upgrades:
 
 ```bash
-bin/magento module:enable TrustedShops_ConnectHyva
+bin/magento module:enable TrustedShops_HyvaEasyIntegration
 bin/magento setup:upgrade
 ```
 
