@@ -1,0 +1,51 @@
+<?php
+/**
+ * Hyvä Checkout header (Hyva_Checkout::page/header/checkout-header.phtml) with the
+ * "additional" container rendered, so the Trstd Login element shows on the checkout.
+ */
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @var Escaper $escaper */
+/** @var Template $block */
+
+$additionalHtml = trim((string)$block->getChildHtml('additional'));
+?>
+<div id="header"
+     class="relative z-30 w-full border-b shadow bg-container-lighter border-container-lighter"
+>
+    <?php if ($additionalHtml !== ''): ?>
+        <style>
+            /* Out of the flow so the logo stays centred, as in Hyvä's own checkout header */
+            .ts-checkout-header { position: relative; }
+            .ts-checkout-header-additional {
+                position: absolute; top: 0; bottom: 0; right: 1.5rem;
+                display: flex; align-items: center;
+            }
+            /* Too narrow for a centred logo plus the element: logo left, element right.
+               The padding already spaces it from the edge, so drop its outer margin; that
+               keeps both on one line down to 320px, and anything narrower wraps to the right. */
+            @media (max-width: 639px) {
+                .ts-checkout-header { justify-content: space-between; }
+                .ts-checkout-header-additional { position: static; margin-left: auto; }
+                .ts-checkout-header-additional .ts-trstd-login-hd-wrapper { margin-right: 0; }
+            }
+        </style>
+    <?php endif ?>
+    <div class="ts-checkout-header container flex flex-wrap items-center justify-center w-full px-6 py-3 mx-auto mt-0">
+        <!--Logo-->
+        <?= $block->getChildHtml('logo'); ?>
+
+        <?php if ($additionalHtml !== ''): ?>
+            <div class="ts-checkout-header-additional">
+                <?= /* @noEscape */ $additionalHtml ?>
+            </div>
+        <?php endif ?>
+    </div>
+
+    <!--Authentication Pop-Up-->
+    <?= $block->getChildHtml('authentication-popup'); ?>
+</div>

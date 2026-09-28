@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--
+            Hyvä Checkout's reduced header renders only the logo, so the Trstd Login element
+            placed in "header-content.additional" would not show on the checkout. This template
+            is Hyvä's checkout header with that container added.
+        -->
+        <referenceBlock name="header-content"
+                        template="Trustedshops_HyvaEasyIntegration::checkout/header.phtml"/>
+    </body>
+</page>
