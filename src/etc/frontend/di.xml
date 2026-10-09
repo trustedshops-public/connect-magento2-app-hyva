@@ -16,4 +16,19 @@
             </argument>
         </arguments>
     </type>
+
+    <!--
+        Hyvä has none of the Luma header controls the Trstd Login element anchors to, but
+        Magento's core layout still declares the unused "header-wrapper" container, which
+        would put the element on a line of its own above the header. Place it in the Hyvä
+        header icon row instead; on the checkout page the header template of this module
+        renders the same container.
+    -->
+    <type name="Trustedshops\EasyIntegration\Observer\TrstdLoginPlacement">
+        <arguments>
+            <argument name="headerContainers" xsi:type="array">
+                <item name="header-content.additional" xsi:type="number">5</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
