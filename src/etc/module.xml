@@ -10,6 +10,8 @@
         <sequence>
             <module name="Trustedshops_EasyIntegration"/>
             <module name="Hyva_CompatModuleFallback"/>
+            <!-- Load order only: the checkout header override must come after Hyvä Checkout's own -->
+            <module name="Hyva_Checkout"/>
         </sequence>
     </module>
 </config>

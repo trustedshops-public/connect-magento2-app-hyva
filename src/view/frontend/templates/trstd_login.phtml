@@ -1,0 +1,37 @@
+<?php
+/**
+ * Hyvä version of Trustedshops_EasyIntegration::trstd_login.phtml, picked up through the
+ * compat module fallback on Hyvä themes only.
+ *
+ * The markup is unchanged. The styles below undo the base module's Luma header styling
+ * where it would otherwise apply in Hyvä: without Hyvä Checkout, the checkout page uses
+ * Magento's core header wrapper (".header.content") holding only the centred logo, and
+ * the Luma float/offset rules put the element on a second line (desktop) or on top of
+ * the logo (mobile). In the Hyvä header icon row none of those rules match.
+ */
+
+/** @var Trustedshops\EasyIntegration\Block\TrstdLogin $block */
+?>
+<?php if ($block->isEnabled()): ?>
+    <?php $tag = $block->getElementTag(); ?>
+    <style>
+        body .page-header > .header.content { position: relative; }
+        body .page-header > .header.content > .ts-trstd-login-hd-wrapper {
+            position: absolute; top: 0; bottom: 0; right: 1.5rem;
+            float: none; margin: 0;
+        }
+        /* Too narrow for a centred logo plus the element: logo left, element right */
+        @media (max-width: 639px) {
+            body .page-header > .header.content {
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 0 1.5rem;
+            }
+            body .page-header > .header.content > .ts-trstd-login-hd-wrapper { position: static; }
+        }
+    </style>
+    <!-- added by Trusted Shops app: Start -->
+    <div class="ts-trstd-login-hd-wrapper" data-app="TrustedShopsApp">
+        <?= /* @noEscape */ '<' . $tag . '></' . $tag . '>' ?>
+    </div>
+    <!-- End -->
+<?php endif; ?>
